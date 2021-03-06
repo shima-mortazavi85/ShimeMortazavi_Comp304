@@ -78,13 +78,13 @@ public class Second extends AppCompatActivity {
         int stopx1=50;
         int startx1=0;
         // canvas.drawLine(0, Integer.parseInt((String)Array.get(teslaArray, 0)), stopx,Integer.parseInt((String)Array.get(teslaArray, 1)), paint);
-        for(int i=1;i<teslaArray.length-1;i++) {
-            canvas.drawLine(startx1, Integer.parseInt((String)Array.get(bitcoinArray, i)), stopx,Integer.parseInt((String)Array.get(teslaArray, i+1)), paint);
+        for(int i=1;i<bitcoinArray.length-1;i++) {
+            canvas.drawLine(startx1, Integer.parseInt((String)Array.get(bitcoinArray, i)), stopx1,Integer.parseInt((String)Array.get(bitcoinArray, i+1)), paint);
             startx1=stopx1;
             stopx1=stopx1+50;
         }
 
-
+/*
         canvas.drawLine(0,450,50,400,paint);
         canvas.drawLine(50,400,100,500,paint);
         canvas.drawLine(100,500,150,380,paint);
@@ -95,7 +95,7 @@ public class Second extends AppCompatActivity {
         canvas.drawLine(350,450,400,300,paint);
         canvas.drawLine(400,300,450,320,paint);
         canvas.drawLine(450,320,500,200,paint);
-        canvas.drawLine(500,200,550,280,paint);
+        canvas.drawLine(500,200,550,280,paint);*/
 
         img3.setImageBitmap(bitmap1);
         img3.draw(canvas);
