@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Shime-Mortazavi_Comp304</string>
+    <string-array name="stock">
+        <item>100</item>
+        <item>300</item>
+        <item>220</item>
+        <item>350</item>
+        <item>480</item>
+        <item>380</item>
+        <item>510</item>
+        <item>410</item>
+        <item>550</item>
+        <item>320</item>
+        <item>480</item>
+        <item>390</item>
+    </string-array>
+    <string-array name="bitcoin">
+        <item>450</item>
+        <item>400</item>
+        <item>500</item>
+        <item>380</item>
+        <item>420</item>
+        <item>310</item>
+        <item>370</item>
+        <item>450</item>
+        <item>300</item>
+        <item>320</item>
+        <item>200</item>
+        <item>280</item>
+    </string-array>
+
+</resources>
