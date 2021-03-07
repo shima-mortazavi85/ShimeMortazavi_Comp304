@@ -16,7 +16,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
-        android:layout_marginBottom="232dp"
+        android:layout_marginBottom="155dp"
         android:onClick="showTost"
         android:text="Next" />
 
@@ -37,6 +37,21 @@
 
     <ImageView
         android:id="@+id/img3"
+        android:layout_width="600dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="235dp"
+        android:layout_marginEnd="83dp"
+        app:srcCompat="@color/black" />
+
+    <ImageView
+        android:id="@+id/img4"
         android:layout_width="600dp"
         android:layout_height="200dp"
         android:layout_alignParentStart="true"

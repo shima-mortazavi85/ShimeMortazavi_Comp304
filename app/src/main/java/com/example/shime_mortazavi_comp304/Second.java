@@ -20,10 +20,11 @@ public class Second extends AppCompatActivity {
 
     CheckBox check1,check2,check3;
     Bitmap bitmap1,bitmap2;
-    ImageView img,img3;
+    ImageView img,img3,img4;
     Canvas canvas;
     Button btn_Tesla,btn_Bitcoin,btn_Gold;
     public static TextView data;
+    int values [];
 
     @Override
 
@@ -56,7 +57,7 @@ public class Second extends AppCompatActivity {
         int stopx=50;
         int startx=0;
        // canvas.drawLine(0, Integer.parseInt((String)Array.get(teslaArray, 0)), stopx,Integer.parseInt((String)Array.get(teslaArray, 1)), paint);
-        for(int i=1;i<teslaArray.length-1;i++) {
+        for(int i=0;i<teslaArray.length-1;i++) {
             canvas.drawLine(startx, Integer.parseInt((String)Array.get(teslaArray, i)), stopx,Integer.parseInt((String)Array.get(teslaArray, i+1)), paint);
             startx=stopx;
             stopx=stopx+50;
@@ -78,7 +79,7 @@ public class Second extends AppCompatActivity {
         int stopx1=50;
         int startx1=0;
         // canvas.drawLine(0, Integer.parseInt((String)Array.get(teslaArray, 0)), stopx,Integer.parseInt((String)Array.get(teslaArray, 1)), paint);
-        for(int i=1;i<bitcoinArray.length-1;i++) {
+        for(int i=0;i<bitcoinArray.length-1;i++) {
             canvas.drawLine(startx1, Integer.parseInt((String)Array.get(bitcoinArray, i)), stopx1,Integer.parseInt((String)Array.get(bitcoinArray, i+1)), paint);
             startx1=stopx1;
             stopx1=stopx1+50;
@@ -101,12 +102,47 @@ public class Second extends AppCompatActivity {
         img3.draw(canvas);
         img3.setVisibility(View.INVISIBLE);
 
+        ///////GOLD//////////
+
+        img4 = (ImageView) findViewById(R.id.img4);
+
+        bitmap1 = Bitmap.createBitmap(600, 600, Bitmap.Config.ARGB_8888);
+        canvas = new Canvas(bitmap1);
+        //set canvas background
+        canvas.drawColor(Color.BLACK);
+
+        FetchData process=new FetchData();
+        process.execute();
+
+        values = process.myArray;
+        int stopx3=50;
+        int startx3=0;
+        int startY = 0;
+        int stopY = 0;
+        // canvas.drawLine(0, Integer.parseInt((String)Array.get(teslaArray, 0)), stopx,Integer.parseInt((String)Array.get(teslaArray, 1)), paint);
+        for(int i=0;i<values.length-1;i++) {
+            startY = values[i];
+            stopY = values[i+1];
+            //canvas.drawLine(0, 0, 50,0, paint);
+            //canvas.drawLine(50, 470, 100,450, paint);
+            canvas.drawLine(startx3, startY, stopx3,stopY, paint);
+            startx3=stopx3;
+            stopx3=stopx3+50;
+        }
+
+        img4.setImageBitmap(bitmap1);
+        img4.draw(canvas);
+        //img4.setVisibility(View.VISIBLE);
+
+        img4.setVisibility(View.INVISIBLE);
+
 
         btn_Tesla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 img3.setVisibility(View.INVISIBLE);
                 img.setVisibility(View.VISIBLE);
+                img4.setVisibility(View.INVISIBLE);
             }
         });
 
@@ -116,15 +152,37 @@ public class Second extends AppCompatActivity {
             public void onClick(View v) {
                 img.setVisibility(View.INVISIBLE);
                 img3.setVisibility(View.VISIBLE);
+                img4.setVisibility(View.INVISIBLE);
             }
         });
+
+
         
         btn_Gold.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-                FetchData process=new FetchData();
+                img.setVisibility(View.INVISIBLE);
+                img3.setVisibility(View.INVISIBLE);
+                img4.setVisibility(View.VISIBLE);
+
+                /*FetchData process=new FetchData();
                 process.execute();
+
+                values = process.myArray;
+                int stopx3=50;
+                int startx3=0;
+                // canvas.drawLine(0, Integer.parseInt((String)Array.get(teslaArray, 0)), stopx,Integer.parseInt((String)Array.get(teslaArray, 1)), paint);
+                for(int i=1;i<values.length-1;i++) {
+                    canvas.drawLine(startx3, values[i], stopx3,values[i+1], paint);
+                    startx3=stopx3;
+                    stopx3=stopx3+50;
+                }
+
+                img4.setImageBitmap(bitmap1);
+                img4.draw(canvas);
+                img4.setVisibility(View.VISIBLE);*/
+
 
             }
         });

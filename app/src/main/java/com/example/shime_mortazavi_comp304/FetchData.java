@@ -17,7 +17,7 @@ import java.net.URL;
 
 public class FetchData extends AsyncTask {
 
-   String data;
+   String data="";
     int myArray [] = new int[12];
 
             @Override
@@ -36,7 +36,8 @@ public class FetchData extends AsyncTask {
                     }
                     JSONArray Gold=new JSONArray(data);
                     for(int i=0;i<Gold.length();i++){
-                       myArray[i] = Integer.parseInt((String) Gold.get(i));
+                       //myArray[i] = Integer.parseInt((String) Gold.get(i));
+                        myArray[i] = (Integer)Gold.get(i);
                     }
 
                 } catch (MalformedURLException e) {
