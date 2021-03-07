@@ -68,7 +68,7 @@ public class Second extends AppCompatActivity {
         img.setVisibility(View.INVISIBLE);
 
         //Bitcoin
-        img3 = (ImageView) findViewById(R.id.img3);
+        img4 = (ImageView) findViewById(R.id.img4);
 
         bitmap1 = Bitmap.createBitmap(600, 600, Bitmap.Config.ARGB_8888);
         canvas = new Canvas(bitmap1);
@@ -98,13 +98,13 @@ public class Second extends AppCompatActivity {
         canvas.drawLine(450,320,500,200,paint);
         canvas.drawLine(500,200,550,280,paint);*/
 
-        img3.setImageBitmap(bitmap1);
-        img3.draw(canvas);
-        img3.setVisibility(View.INVISIBLE);
+        img4.setImageBitmap(bitmap1);
+        img4.draw(canvas);
+        img4.setVisibility(View.INVISIBLE);
 
         ///////GOLD//////////
 
-        img4 = (ImageView) findViewById(R.id.img4);
+        img3 = (ImageView) findViewById(R.id.img3);
 
         bitmap1 = Bitmap.createBitmap(600, 600, Bitmap.Config.ARGB_8888);
         canvas = new Canvas(bitmap1);
@@ -120,21 +120,22 @@ public class Second extends AppCompatActivity {
         int startY = 0;
         int stopY = 0;
         // canvas.drawLine(0, Integer.parseInt((String)Array.get(teslaArray, 0)), stopx,Integer.parseInt((String)Array.get(teslaArray, 1)), paint);
-        for(int i=0;i<values.length-1;i++) {
+        for(int i=0;i<3;i++) {
             startY = values[i];
             stopY = values[i+1];
-            //canvas.drawLine(0, 0, 50,0, paint);
-            //canvas.drawLine(50, 470, 100,450, paint);
+            /*canvas.drawLine(50, 0, 50,50, paint);
+            canvas.drawLine(50, 470, 150,450, paint);
+            canvas.drawLine(150, 450, 200,550, paint);*/
             canvas.drawLine(startx3, startY, stopx3,stopY, paint);
             startx3=stopx3;
             stopx3=stopx3+50;
         }
 
-        img4.setImageBitmap(bitmap1);
-        img4.draw(canvas);
+        img3.setImageBitmap(bitmap1);
+        img3.draw(canvas);
         //img4.setVisibility(View.VISIBLE);
 
-        img4.setVisibility(View.INVISIBLE);
+        img3.setVisibility(View.INVISIBLE);
 
 
         btn_Tesla.setOnClickListener(new View.OnClickListener() {
@@ -151,8 +152,8 @@ public class Second extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 img.setVisibility(View.INVISIBLE);
-                img3.setVisibility(View.VISIBLE);
-                img4.setVisibility(View.INVISIBLE);
+                img4.setVisibility(View.VISIBLE);
+                img3.setVisibility(View.INVISIBLE);
             }
         });
 
@@ -163,8 +164,8 @@ public class Second extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 img.setVisibility(View.INVISIBLE);
-                img3.setVisibility(View.INVISIBLE);
-                img4.setVisibility(View.VISIBLE);
+                img4.setVisibility(View.INVISIBLE);
+                img3.setVisibility(View.VISIBLE);
 
                 /*FetchData process=new FetchData();
                 process.execute();
